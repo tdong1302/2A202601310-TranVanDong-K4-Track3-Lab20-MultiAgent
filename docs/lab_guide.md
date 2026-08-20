@@ -115,3 +115,38 @@ Mỗi nhóm trả lời 2 câu:
 
 1. Case nào nên dùng multi-agent? Vì sao?
 2. Case nào không nên dùng multi-agent? Vì sao?
+
+---
+
+### Câu trả lời (2A202601310 - Trần Văn Đông)
+
+**1. Case nào nên dùng multi-agent? Vì sao?**
+
+Nên dùng multi-agent khi bài toán có **nhiều giai đoạn tách biệt rõ ràng** và mỗi giai đoạn
+cần sự tập trung, kỹ năng khác nhau:
+
+- **Research report / Due diligence**: Researcher tìm nguồn, Analyst đánh giá chất lượng nguồn
+  và xác định claim chính, Writer tổng hợp bài viết có trích dẫn. Mỗi agent chỉ làm một việc,
+  tránh "context pollution" khi nhồi tất cả vào một prompt.
+- **Khi cần audit trail**: Biết agent nào làm gì, khi nào, với input/output gì — phục vụ
+  compliance, explainability, debugging.
+- **Khi quality quan trọng hơn latency**: Benchmark cho thấy multi-agent đạt 8.0/10 vs 5.0/10,
+  với citation coverage 80% vs 40% so với single-agent.
+- **Khi task dài và phức tạp**: Nhiều sub-task có thể cần retry độc lập (nếu Researcher fail,
+  chỉ cần retry Researcher, không cần chạy lại từ đầu).
+
+**2. Case nào không nên dùng multi-agent? Vì sao?**
+
+Không nên dùng khi:
+
+- **Latency là yếu tố quyết định**: Chat real-time cần < 2s — multi-agent tốn ~4.8× thời gian
+  (19s vs 4s) do nhiều LLM call nối tiếp nhau.
+- **Task đơn giản**: Câu hỏi tra cứu ("Paris là thủ đô của nước nào?"), tóm tắt văn bản ngắn,
+  phân loại label — một LLM call là đủ, thêm Supervisor/Researcher/Analyst chỉ tốn tài nguyên
+  mà không cải thiện chất lượng.
+- **Chi phí token cần tối thiểu**: Multi-agent tốn ~4.2× token so với single-agent vì 3-4 LLM
+  calls thay vì 1. Với scale lớn (triệu query/ngày), điều này có thể không tối ưu.
+- **Không có ranh giới task tự nhiên**: Nếu buộc phải chia vai mà không có sự tách biệt rõ ràng,
+  overhead handoff > benefit chuyên môn hoá.
+- **Prototype nhanh / MVP**: Complexity của multi-agent (shared state, routing, guardrails)
+  làm chậm tốc độ phát triển ban đầu.

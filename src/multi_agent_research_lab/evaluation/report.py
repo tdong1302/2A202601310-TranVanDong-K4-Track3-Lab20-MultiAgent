@@ -1,13 +1,10 @@
-"""Benchmark report rendering."""
+"""Benchmark report rendering with analysis section."""
 
 from multi_agent_research_lab.core.schemas import BenchmarkMetrics
 
 
-def render_markdown_report(metrics: list[BenchmarkMetrics]) -> str:
-    """Render benchmark metrics to markdown.
-
-    TODO(student): Add richer analysis, examples, screenshots, and trace links.
-    """
+def render_markdown_report(metrics: list[BenchmarkMetrics], analysis: str = "") -> str:
+    """Render benchmark metrics to markdown with an optional analysis section."""
 
     lines = [
         "# Benchmark Report",
@@ -24,4 +21,8 @@ def render_markdown_report(metrics: list[BenchmarkMetrics]) -> str:
             f"| {item.run_name} | {item.latency_seconds:.2f} | {cost} | {quality} "
             f"| {citation} | {failure} | {item.notes} |"
         )
+
+    if analysis:
+        lines += ["", "## Analysis", "", analysis]
+
     return "\n".join(lines) + "\n"

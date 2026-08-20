@@ -1,0 +1,156 @@
+[
+  {
+    "name": "agent.supervisor",
+    "attributes": {
+      "query": "Compare single-agent vs multi-agent architectures for AI research tasks",
+      "iteration": 0,
+      "source_count": 0
+    },
+    "start_time": "2026-08-20T09:29:25.442512+00:00",
+    "duration_seconds": 0.0017442000007577008,
+    "error": null,
+    "outputs": {
+      "iteration": 1,
+      "source_count": 0,
+      "route": "researcher"
+    },
+    "end_time": "2026-08-20T09:29:25.444253+00:00",
+    "langsmith_run_id": "01a01e80-fec2-7281-862e-76688eb7d1b2",
+    "langsmith_trace_id": "01a01e80-fd78-7030-b5f1-52ae441aa92e"
+  },
+  {
+    "name": "agent.researcher",
+    "attributes": {
+      "query": "Compare single-agent vs multi-agent architectures for AI research tasks",
+      "iteration": 1,
+      "source_count": 0
+    },
+    "start_time": "2026-08-20T09:29:25.449378+00:00",
+    "duration_seconds": 12.61038969999936,
+    "error": null,
+    "outputs": {
+      "iteration": 1,
+      "source_count": 5,
+      "route": "researcher"
+    },
+    "end_time": "2026-08-20T09:29:38.059774+00:00",
+    "langsmith_run_id": "01a01e80-fec9-71b1-ba9f-fa5749c92aac",
+    "langsmith_trace_id": "01a01e80-fd78-7030-b5f1-52ae441aa92e"
+  },
+  {
+    "name": "agent.supervisor",
+    "attributes": {
+      "query": "Compare single-agent vs multi-agent architectures for AI research tasks",
+      "iteration": 1,
+      "source_count": 5
+    },
+    "start_time": "2026-08-20T09:29:38.084692+00:00",
+    "duration_seconds": 0.001399400000082096,
+    "error": null,
+    "outputs": {
+      "iteration": 2,
+      "source_count": 5,
+      "route": "analyst"
+    },
+    "end_time": "2026-08-20T09:29:38.086093+00:00",
+    "langsmith_run_id": "01a01e81-3024-73e3-bdb5-09c1dfbe25ea",
+    "langsmith_trace_id": "01a01e80-fd78-7030-b5f1-52ae441aa92e"
+  },
+  {
+    "name": "agent.analyst",
+    "attributes": {
+      "query": "Compare single-agent vs multi-agent architectures for AI research tasks",
+      "iteration": 2,
+      "source_count": 5
+    },
+    "start_time": "2026-08-20T09:29:38.089049+00:00",
+    "duration_seconds": 5.609005499998602,
+    "error": null,
+    "outputs": {
+      "iteration": 2,
+      "source_count": 5,
+      "route": "analyst"
+    },
+    "end_time": "2026-08-20T09:29:43.698056+00:00",
+    "langsmith_run_id": "01a01e81-3029-7862-8dcc-c0ef294a260c",
+    "langsmith_trace_id": "01a01e80-fd78-7030-b5f1-52ae441aa92e"
+  },
+  {
+    "name": "agent.supervisor",
+    "attributes": {
+      "query": "Compare single-agent vs multi-agent architectures for AI research tasks",
+      "iteration": 2,
+      "source_count": 5
+    },
+    "start_time": "2026-08-20T09:29:43.700857+00:00",
+    "duration_seconds": 0.001627700001336052,
+    "error": null,
+    "outputs": {
+      "iteration": 3,
+      "source_count": 5,
+      "route": "writer"
+    },
+    "end_time": "2026-08-20T09:29:43.702484+00:00",
+    "langsmith_run_id": "01a01e81-4615-7391-82a3-9b42f4f929f0",
+    "langsmith_trace_id": "01a01e80-fd78-7030-b5f1-52ae441aa92e"
+  },
+  {
+    "name": "agent.writer",
+    "attributes": {
+      "query": "Compare single-agent vs multi-agent architectures for AI research tasks",
+      "iteration": 3,
+      "source_count": 5
+    },
+    "start_time": "2026-08-20T09:29:43.704770+00:00",
+    "duration_seconds": 10.433182599999782,
+    "error": null,
+    "outputs": {
+      "iteration": 3,
+      "source_count": 5,
+      "route": "writer"
+    },
+    "end_time": "2026-08-20T09:29:54.137954+00:00",
+    "langsmith_run_id": "01a01e81-4618-75a1-920c-41b65daa0682",
+    "langsmith_trace_id": "01a01e80-fd78-7030-b5f1-52ae441aa92e"
+  },
+  {
+    "name": "agent.supervisor",
+    "attributes": {
+      "query": "Compare single-agent vs multi-agent architectures for AI research tasks",
+      "iteration": 3,
+      "source_count": 5
+    },
+    "start_time": "2026-08-20T09:29:54.140184+00:00",
+    "duration_seconds": 0.0009481000015512109,
+    "error": null,
+    "outputs": {
+      "iteration": 4,
+      "source_count": 5,
+      "route": "done"
+    },
+    "end_time": "2026-08-20T09:29:54.141126+00:00",
+    "langsmith_run_id": "01a01e81-6edc-7191-a74f-273c46d4a324",
+    "langsmith_trace_id": "01a01e80-fd78-7030-b5f1-52ae441aa92e"
+  },
+  {
+    "name": "workflow.multi_agent",
+    "attributes": {
+      "query": "Compare single-agent vs multi-agent architectures for AI research tasks"
+    },
+    "start_time": "2026-08-20T09:29:25.094310+00:00",
+    "duration_seconds": 29.048442100000102,
+    "error": null,
+    "outputs": {
+      "route_history": [
+        "researcher",
+        "analyst",
+        "writer",
+        "done"
+      ],
+      "has_final_answer": true
+    },
+    "end_time": "2026-08-20T09:29:54.142735+00:00",
+    "langsmith_run_id": "01a01e80-fd78-7030-b5f1-52ae441aa92e",
+    "langsmith_trace_id": "01a01e80-fd78-7030-b5f1-52ae441aa92e"
+  }
+]
